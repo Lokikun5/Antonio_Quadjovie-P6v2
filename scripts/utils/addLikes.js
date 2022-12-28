@@ -19,10 +19,10 @@ function addLike(el){
 } 
 // Accessibilité 
 
-const eLike = document.getElementById("#key-like");
-console.log(eLike);
+// const eLike = document.getElementById("key-like");
+// console.log(eLike);
 // eLike.addEventListener('keyup',(e) =>{
 //     if (e.key === "Enter") {
-//         addLike(e);
+//         addLike();
 //     }
 // })

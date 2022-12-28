@@ -29,7 +29,7 @@ function mediaFactory(media) {
         const likeIcon = document.createElement( 'i' );
         likeIcon.setAttribute("class", "far fa-heart icon-like");
         likeIcon.setAttribute("tabindex", "0");
-        likeIcon.setAttribute("onclick","onkeydown", `addLike(this)`);
+        likeIcon.setAttribute("onclick", `addLike(this)`);
         likeIcon.setAttribute("onkeydown", `addLike(this)`);
 
         // Icon liked 

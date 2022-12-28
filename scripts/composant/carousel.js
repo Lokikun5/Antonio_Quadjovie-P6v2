@@ -36,13 +36,13 @@ function closeLightBox() {
 
 // accessibility keyboard
 
-// const link = document.querySelectorAll("card-media");
-// console.log(link);
-// link.addEventListener("keydown", (e) =>{
-//     if (e.code === "Enter"){
-//         openLightbox(index);
-//     }
-// });
+const keyboardLink = document.querySelectorAll("card-media");
+
+keyboardLink.addEventListener("keydown", (e) =>{
+    if (e.code === "Enter"){
+        openLightbox(index);
+    }
+});
 
 document.addEventListener("keyup", (e) => {
     if (e.key === "ArrowRight") {
