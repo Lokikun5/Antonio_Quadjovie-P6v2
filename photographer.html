@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+    integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fisheye - photographe </title>
+  </head>
+
+  <body>
+    <div id="container-carousel" aria-label="image closeup view" aria-hidden="true" role="carousel">
+      <section class="carousel" tabindex="0" aria-label="Vue de l'image en grand">
+        <div class="carousel-container">
+          <div class="carousel-item">
+            <div class="item">
+              <div id="imageVideoLightbox"></div>
+              <h2 class="carousel-sous-titre"></h2>
+            </div>
+          </div>
+
+        </div>
+        <button onclick="prev()" class="carousel-prev" aria-label="Previous image" tabindex="0">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button onclick="next()" class="carousel-next" aria-label="Next image" tabindex="0">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <button onclick="closeLightBox()" id="exit" class="carousel-exit" aria-label="Close dialog" tabindex="0">
+          <i class="fas fa-times"></i>
+        </button>
+      </section>
+    </div>
+
+    <header class="header-index">
+      <a href="./index.html" class="href"> <img src="assets/images/logo.png" alt="Fisheye Home page" class="logo"></a>
+    </header>
+
+    <main id="main" aria-hidden="false">
+
+      <section class="photograph-header">
+        <div class="photograph-info">
+          <h1 id="name"></h1>
+          <span id="locality" class="locality"></span>
+          <p id="tagline" class="color-text-secondaire"></p>
+        </div>
+        <button class="contact_button btn-hover" onclick="displayModal()">Contactez-moi</button>
+        <div id="photographerImage"></div>
+      </section>
+
+      <div class="filter">
+        <p>Trier par :</p>
+        <button id="buttonFilter" class="button-filter btn-hover" aria-label="boutton trier" tabindex="0" 
+                  aria-labelledby="buttonFilter" aria-haspopup="listbox" aria-expanded="true">
+          <span id="filterTiltle">Populaire</span>  
+          <i class="fas fa-chevron-down chevron"></i>
+        </button>
+        <ul id="filterList" class="filtersMenu-list" aria-hidden="false" role="listbox" aria-labelledby="buttonFilter" tabindex="-1">
+          <li id="filter_popular" class="gap" aria-label="filtre populaire" tabindex="0" role="option">
+           <span id="label-popular">Populaire</span>  
+            <i class="fas fa-chevron-up chevron"></i>
+          </li>
+          <li id="filter_date" class="" aria-label="filtre populaire" tabindex="0" role="option">
+           <span id="label-date">Date</span>  
+            <!-- <i class="fas fa-chevron-up chevron"></i> -->
+          </li>
+          <li id="filter_title" class="label-titre" aria-label="filtre populaire" tabindex="0" role="option">
+            Titre 
+            <!-- <i class="fas fa-chevron-up chevron"></i> -->
+          </li>
+        </ul>
+      </div>
+      <section id="container-media">
+      
+      </section>
+      <div class="buble-info" aria-label="information" tabindex="0">
+        <span class="total-likes" id="total-likes">951</span>
+        <span class="likes"><i class="fas fa-heart"></i></span>
+        <span class="tarif" id="total-price">250€ /jour</span>
+      </div>
+    </main>
+
+    <div id="contact_modal">
+			<div class="modal">
+				<header>
+          <h2>Contactez-moi <br><span id="contact-name">antonio</span></h2>
+          
+          <img src="assets/icons/close.svg" id="closeMod" onclick="closeModal()" tabindex="0" role="img" aria-label="Close contact form"/>
+        </header>
+				<form id="form-contact"
+              name="reserve"
+              action="photographer.html"
+              method="get">
+          <div>
+            <label id="firstName" for="prenon">Prénom</label>
+            <input type="text" id="prenon" aria-label="First name" tabindex="0">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" aria-label="Last name" tabindex="0"/>
+            <label for="email">Email</label>
+            <input type="text" id="email" aria-label="Email" tabindex="0" />
+            <label for="message">Votre Message</label>
+            <textarea tabindex="0" aria-label="Your message" name="message" id="message" cols="30" rows="10"></textarea>
+          </div>
+          <button id="btn-envoyer" type="submit" aria-label="Send" class="contact_button close-modal">Envoyer</button>
+        </form>
+			</div>
+		</div>
+    <script src="scripts/factories/media.js"></script>
+    <script src="scripts/utils/contactForm.js"></script>
+    <script src="scripts/utils/addLikes.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
+    <script src="scripts/composant/carousel.js"></script>
+  </body>
+</html>
