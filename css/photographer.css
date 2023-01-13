@@ -216,6 +216,7 @@ form input {
     width: 300px;
     margin-top: 10px;
     cursor: pointer;
+    text-decoration: none;
   }
 .figure-box {
     margin: 0px;
