@@ -13,8 +13,10 @@ async function getPhotographerId() {
   const photographers  = data.photographers;
   const medias = data.media;
   //- Récupere les infos photographe
-  const photographer = photographers.find(p => p.id === getUrlId);
-  const mediasPhotographer = medias.filter(m => m.photographerId === getUrlId);
+  // eslint-disable-next-line
+  const photographer = photographers.find(p => p.id == getUrlId);
+  // eslint-disable-next-line
+  const mediasPhotographer = medias.filter(m => m.photographerId == getUrlId);
   mediaSave = mediasPhotographer
   //- afficher les infos photographe header
   document.getElementById('name').innerText = photographer.name;
