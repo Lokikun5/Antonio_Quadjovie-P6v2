@@ -54,19 +54,17 @@ function displayMedias(medias){
     const mediaCardDOM = mediaModel.getMediaCardDOM(index);
     gallery.appendChild(mediaCardDOM);
   });
-
-  medias.forEach((media, index) => {
-    totalPrice += media.price
-    // eslint-disable-next-line
-    const mediaModel = mediaFactory(media);
-    const mediaCardDOM = mediaModel.getMediaCardDOM(index);
-    gallery.appendChild(mediaCardDOM);
-  });
   const totalLikes = document.getElementById('total-likes');
   totalLikes.textContent = totalLike;
+
+  medias.forEach((media) => {
+    totalPrice += media.price
+    // eslint-disable-next-line
     
+  });
+  
   const totalPrices = document.getElementById('total-price');
-  totalPrices.textContent = totalPrice;
+  totalPrices.textContent = `${totalPrice}€/jour`;
 }
 
 // Bouton filtre

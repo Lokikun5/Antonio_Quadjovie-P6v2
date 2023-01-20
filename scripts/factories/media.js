@@ -5,15 +5,15 @@ function mediaFactory(media) {
   function getMediaCardDOM(index) {
 
     // Generate Media Factory
-    const container = document.createElement( 'a' );
-    container.setAttribute("onclick", `openLightbox(${index})`);
-    container.setAttribute("href", `javascript:void(0)`);
-    container.setAttribute("class", "card-media");
-        
-    const figureEl = document.createElement( 'figure' );
-    figureEl.setAttribute("class", "figure-box");
+    const container = document.createElement( 'div' );
 
-    const figureCaptionEl = document.createElement( 'figcaption' );
+    const figureEl = document.createElement( 'a' );
+    figureEl.setAttribute("class", "figure-box");
+    figureEl.setAttribute("onclick", `openLightbox(${index})`);
+    figureEl.setAttribute("href", `javascript:void(0)`);
+    figureEl.setAttribute("class", "card-media");
+
+    const figureCaptionEl = document.createElement( 'div' );
     figureCaptionEl.setAttribute("class", "legende-box");
 
     const titleEl = document.createElement('span');
