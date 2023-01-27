@@ -34,7 +34,7 @@ async function getPhotographerId() {
   img.setAttribute("aria-label", "image");
   photographerImage.appendChild(img);
 
-  displayMedias(mediasPhotographer);
+  displayMedias(mediasPhotographer,true);
 
 
     
@@ -42,13 +42,16 @@ async function getPhotographerId() {
 
 }
 
-function displayMedias(medias){
+function displayMedias(medias,firstLoad = false) {
   // Total Likes & price account
   const gallery = document.getElementById('container-media');
   gallery.innerHTML= "";
-  // medias.sort((a,b) => {
-  //   return b.likes - a.likes;
-  // });
+  if(firstLoad){
+    medias.sort((a,b) => {
+      return b.likes - a.likes;
+    });
+  }
+  
   
   let totalLike = 0;
   let totalPrice = 0;
