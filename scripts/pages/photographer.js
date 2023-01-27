@@ -1,5 +1,6 @@
 //Mettre le code JavaScript lié à la page photographer.html
 var mediaSave;
+
 async function getPhotographerId() {
   const reponse = await fetch("./data/photographers.json");
   const data = await reponse.json()
@@ -45,6 +46,10 @@ function displayMedias(medias){
   // Total Likes & price account
   const gallery = document.getElementById('container-media');
   gallery.innerHTML= "";
+  // medias.sort((a,b) => {
+  //   return b.likes - a.likes;
+  // });
+  
   let totalLike = 0;
   let totalPrice = 0;
   medias.forEach((media, index) => {
@@ -107,9 +112,10 @@ filterList.addEventListener("keydown", (e) =>{
     filterList.style.display = "none";
   } 
 });
-/////////// Filter cards ////////
+////////// Filter cards ////////
 
 // Filter by likes
+
 const filterPopulaire = document.getElementById('filter_popular');
 filterPopulaire.addEventListener("click", () =>{
   mediaSave.sort((a,b) => {
@@ -117,6 +123,7 @@ filterPopulaire.addEventListener("click", () =>{
   }); 
   displayMedias(mediaSave)
 });
+
 
 // filtre popular accessibility
 filterPopulaire.addEventListener("keydown", (e) =>{         
@@ -174,7 +181,7 @@ filterDate.addEventListener("click", () =>{
 
 filterPopulaire.addEventListener("click", () =>{
   const titleId = document.getElementById('filterTiltle');
-  titleId.innerHTML = `Popilaire`;
+  titleId.innerHTML = `Populaire`;
 })
 
 filterTitle.addEventListener("click", () =>{
@@ -192,7 +199,7 @@ filterDate.addEventListener("keydown", (e) =>{
 filterPopulaire.addEventListener("keydown", (e) =>{
   if (e.code === "Enter"){
     const titleId = document.getElementById('filterTiltle');
-    titleId.innerHTML = `Popilaire`;
+    titleId.innerHTML = `Populaire`;
   }
     
 })

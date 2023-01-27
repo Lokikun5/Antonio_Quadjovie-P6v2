@@ -253,17 +253,20 @@ button {
 }
 .icon-like {
     margin-left: 5px;
-    color: #901C1C !important;
+    color: #901C1C;
     cursor: pointer;
     transition: transform 0.3s;
   }
-  .icon-liked{
-    color: #901C1C;
-    visibility: hidden;
-    position: absolute;
+  .icon-like:active {
+    color: violet;
   }
+  
   .liked {
     color: black;
+    background-color: violet;
+    border-radius: 10%;
+    transition: 1s all;
+
   }
 
   .card-media video {

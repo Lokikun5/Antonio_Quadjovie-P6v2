@@ -34,11 +34,15 @@ function mediaFactory(media) {
     likeIcon.setAttribute("tabindex", "0");
     likeIcon.setAttribute("onclick", `addLike(this)`);
     likeIcon.setAttribute("onkeydown", `addLike(this)`);
+    
 
     // Icon liked 
     const spanLikedIcon = document.createElement( 'span' );
     const likedIcon = document.createElement( 'i' );
-    likedIcon.setAttribute("class", "fas fa-heart fa-solid icon-liked");
+    likeIcon.setAttribute("class", "far fa-heart icon-like");
+    likeIcon.setAttribute("tabindex", "0");
+    likeIcon.setAttribute("onclick", `addLike(this)`);
+    likeIcon.setAttribute("onkeydown", `addLike(this)`);
         
     titleEl.textContent = title;
     likesNum.textContent =  likes;
