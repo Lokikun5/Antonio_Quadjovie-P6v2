@@ -48,37 +48,37 @@ function mediaFactory(media) {
     likesNum.textContent =  likes;
     
     // Condition video or images
-    class DisplayPicure0 {
-      constructor() {
-        const picture = `assets/medias/${image}`;
-        const mediaImg = document.createElement( 'img' );
-        mediaImg.setAttribute("src", picture);
-        mediaImg.setAttribute("alt", title);
-        mediaImg.setAttribute("aria-label", 'image');
-        mediaImg.setAttribute("tabindex", "0");
-        figureEl.appendChild(mediaImg);  
-      }
+    function DisplayPicure0 (){
+      
+      const picture = `assets/medias/${image}`;
+      const mediaImg = document.createElement( 'img' );
+      mediaImg.setAttribute("src", picture);
+      mediaImg.setAttribute("alt", title);
+      mediaImg.setAttribute("aria-label", 'image');
+      mediaImg.setAttribute("tabindex", "0");
+      figureEl.appendChild(mediaImg);  
+      
     }
 
-    class DisplayVideo{
-      constructor(){
-        const mediaVideo = `assets/medias/${video}`;
-        const mp4 = document.createElement( 'video' );
-        mp4.setAttribute("src", mediaVideo);
-        mp4.setAttribute("alt", title);
-        mp4.setAttribute("type", "video/mp4");
-        mp4.setAttribute("aria-label", "video");
-        mp4.setAttribute("tabindex", "0");     
-        figureEl.appendChild(mp4);
-      }
+    function DisplayVideo() {
+      
+      const mediaVideo = `assets/medias/${video}`;
+      const mp4 = document.createElement( 'video' );
+      mp4.setAttribute("src", mediaVideo);
+      mp4.setAttribute("alt", title);
+      mp4.setAttribute("type", "video/mp4");
+      mp4.setAttribute("aria-label", "video");
+      mp4.setAttribute("tabindex", "0");     
+      figureEl.appendChild(mp4);
+      
     }
 
     // Condition video or images
 
     if(image){
-      DisplayPicure0;
+      DisplayPicure0();
     } else{
-      DisplayVideo;
+      DisplayVideo();
     }
    
     figureCaptionEl.appendChild(titleEl);
